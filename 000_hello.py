@@ -1,9 +1,29 @@
-# IMAGES
-from PIL import Image
-img = Image.open("cat.jpg")
-img.show()
+class Employee:
+    def __init__(self, name, pay):
+        self.name = name
+        self.pay = pay
 
-# WRITING, APPENDING AND READING A FILE 
+    job = "developer"
+
+    def show(self):
+        return f"\n{self.name}\n{self.pay}"
+
+
+emp1 = Employee("Ali", 50000)
+emp2 = Employee("Sara", 65000)
+print(emp1.show())
+print(emp2.show())
+emp2.job = "doctor"
+print(emp1.job)
+print(emp2.job)
+
+
+# IMAGES
+# from PIL import Image
+# img = Image.open("cat.jpg")
+# img.show()
+
+# WRITING, APPENDING AND READING A FILE
 # with open("names.txt", "w") as file:
 #     file.write("flumen labs")
 
@@ -21,7 +41,7 @@ img.show()
 #     for line in f:
 #         namelist.append(line.strip())
 
-# print(namelist)        
+# print(namelist)
 
 # for name in sorted(namelist):
 #     print(name)
@@ -33,7 +53,7 @@ img.show()
 #     # rows = csv.reader(f)
 #     rows = csv.DictReader(f)
 #     # print(rows)
-    
+
 #     # for row in rows:
 #     #     print(row["name"])
 #     #     print(row)
@@ -49,7 +69,7 @@ img.show()
 #     students = csv.DictReader(f)
 #     for student in students:
 #         stu_list.append(student)
-    
+
 # print(stu_list)
 
 # stu_list.sort(key= lambda student: student['city'])

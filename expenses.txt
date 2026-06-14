@@ -1,6 +1,4 @@
-cake,30 
-tea,10 
-biscuit,55 
-pen,10 
 pencil,5 
 pencil,5 
+toffee, 1
+biscuit, 5

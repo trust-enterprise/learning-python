@@ -1,9 +1,23 @@
 class Employee:
+    job = "developer"
+
+    @classmethod
+    def change_job(cls, job):
+        cls.job = job
+
+    @classmethod
+    def string_emp(cls, string):
+        name, pay = string.split("-")
+        return cls(name, int(pay))
+
+    @staticmethod
+    def after_increment(pay):
+        pay += 10000
+        return pay
+
     def __init__(self, name, pay):
         self.name = name
         self.pay = pay
-
-    job = "developer"
 
     def show(self):
         return f"\n{self.name}\n{self.pay}"
@@ -11,12 +25,20 @@ class Employee:
 
 emp1 = Employee("Ali", 50000)
 emp2 = Employee("Sara", 65000)
-print(emp1.show())
-print(emp2.show())
-emp2.job = "doctor"
-print(emp1.job)
-print(emp2.job)
+emp3 = Employee.string_emp("Shalu-40000")
 
+emp2.job = "doctor"
+# print(f"\n{emp1.name} --> {emp1.job}")
+# print(f"{emp2.name} --> {emp2.job}")
+# print(f"{emp3.name} --> {emp3.job}\n")
+
+Employee.change_job("architect")
+
+print(f"{emp1.name} --> {emp1.job}, {emp1.pay}")
+print(f"{emp2.name} --> {emp2.job}, {emp2.pay}")
+print(f"{emp3.name} --> {emp3.job}, {emp3.pay}\n")
+
+print(f"after increment, {emp1.name}'s salary is {Employee.after_increment(emp1.pay)}")
 
 # IMAGES
 # from PIL import Image

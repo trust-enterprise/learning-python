@@ -4,7 +4,7 @@ class Expense:
         self.amount = amount
 
     def to_file_string(self):
-        return f"{self.description}, {self.amount}"
+        return f"{self.description},{self.amount}"
 
     def __str__(self):
         return f"{self.description}: ₹{self.amount}"

@@ -1,30 +1,49 @@
+# API REQUEST
+import requests
+
+try:
+    response = requests.get("https://api.exchangerate-api.com/v4/latest/USD", timeout=5)
+
+    response.raise_for_status()
+    data = response.json()
+    print(f"status code: {response.status_code}")
+    print(f"1 USD = data['rates']['INR'] INR")
+
+except requests.exceptions.Timeout as e:
+    print("timed out", e)
+except requests.exceptions.HTTPError as e:
+    print("HTTP error", e)
+except requests.exceptions.RequestException as e:
+    print("Request error", e)
+except KeyError:
+    print("key not found")
 # GETTER, SETTER, DELETER
-class Student:
-    def __init__(self, name, marks):
-        self.name = name
-        self.marks = marks
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
 
-    @property
-    def result(self):
-        return "Pass"
+#     @property
+#     def result(self):
+#         return "Pass"
 
-    @result.setter
-    def result(self, marks):
-        self.marks = marks
-        print(f"updated marks is {self.marks}")
+#     @result.setter
+#     def result(self, marks):
+#         self.marks = marks
+#         print(f"updated marks is {self.marks}")
 
-    @result.deleter
-    def result(self):
-        self.marks = None
-        print(f"result deleted")
+#     @result.deleter
+#     def result(self):
+#         self.marks = None
+#         print(f"result deleted")
 
 
-stu = Student("haris", 90)
-print(stu.result)
+# stu = Student("haris", 90)
+# print(stu.result)
 
-print(stu.marks)
-stu.result = 95
-del stu.result
+# print(stu.marks)
+# stu.result = 95
+# del stu.result
 
 
 # # OOP: class variable, instance method, overriding, classmethod, staticmethod, inheritance

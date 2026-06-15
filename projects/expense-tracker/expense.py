@@ -12,4 +12,4 @@ class Expense:
     @classmethod
     def from_file_line(cls, line):
         description, amount = line.strip().split(",")
-        return cls(description, int(amount))
+        return cls(description, float(amount))

@@ -1,6 +1,7 @@
 # EXPENSE TRACKER PROJECT
 from expense import Expense
 from pathlib import Path
+from currency import get_inr_rate
 
 while True:
     try:
@@ -23,13 +24,22 @@ while True:
 
 def add_expense():
     try:
-        amount = int(input("enter the expense amount (INR): "))
+        amount = int(input("enter the expense amount: "))
     except ValueError:
         print("enter a valid amount, retry.")
         exit()
     else:
         description = input("expense made for: ")
-        return amount, description
+        currency = input("preferred currency code (press enter for INR): ").upper()
+        if currency == "":
+            currency = "INR"
+        if not currency == "INR":
+            amount = amount * get_inr_rate(currency)
+
+        return (
+            amount,
+            description,
+        )
 
 
 def view_expense():
@@ -48,8 +58,8 @@ def view_total():
     with open("expenses.txt", "r") as f:
         for line in f:
             description, amount = line.split(",")
-            total += int(amount)
-        print(f"Total expense is INR {total}")
+            total += float(amount)
+        print(f"Total expense is INR {round(total,2)}")
 
 
 if selection == 1:

@@ -2,3 +2,7 @@ pencil,5
 pencil,5 
 toffee, 1
 biscuit, 5
+dollar,95.18
+pount,127.42 
+euro,220.46
+toffee,1

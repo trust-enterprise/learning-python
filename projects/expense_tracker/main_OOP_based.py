@@ -34,7 +34,11 @@ def add_expense():
         if currency == "":
             currency = "INR"
         if not currency == "INR":
-            amount = amount * get_inr_rate(currency)
+            rate = get_inr_rate(currency)
+            if rate is None:
+                print("enter valid currency code")
+                exit()
+            amount = amount * rate
 
         return (
             amount,

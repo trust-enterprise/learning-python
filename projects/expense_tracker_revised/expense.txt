@@ -1,0 +1,6 @@
+dollar,1.0,USD,95.18
+tea,2.0,MYR,23.44
+tea,2.0,MYR,23.44
+coffee,1.0,NIO,2.59
+pen,5.0,INR,5.0
+chocolate,1.5,ANG,53.17

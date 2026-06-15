@@ -5,6 +5,7 @@ A simple Python expense tracker that saves expenses to a text file.
 ## Features
 
 - Add expense
+- Currency conversion into INR by calling an API
 - View expenses
 - View total expense
 - Save expenses permanently in a file
@@ -16,6 +17,12 @@ A simple Python expense tracker that saves expenses to a text file.
 - Class Methods
 - `__str__()` Magic Method
 - Creating objects from file data
+- API (Application Programming Interface)
+- HTTP Requests and Responses
+- JSON Data
+- requests.get()
+- response.json()
+- Basic API Error Handling
 
 ## Example
 
